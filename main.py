@@ -12,6 +12,10 @@ import machine, onewire, ds18x20
 IA = 0x2141000000010001
 PWD =
 
+# WIFI账号密码
+WIFI_SSID = 'JDHOME_MASTER'
+WIFI_PWD =
+
 # 服务号
 # 读取温度
 RID_GET_TEMP = 1
@@ -51,7 +55,7 @@ def init_temp_sensor():
 
 def connect_wifi():
     print('connect wifi')
-    ok = tziot.connect_wifi('JDHOME_MASTER', 'QWERASDFZXCV')
+    ok = tziot.connect_wifi(WIFI_SSID, WIFI_PWD)
     if ok is False:
         print('connect wifi failed')
         machine.reset()
